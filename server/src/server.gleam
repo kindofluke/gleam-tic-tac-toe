@@ -18,7 +18,8 @@ pub fn main() {
     handle_request(static_directory, _)
     |> wisp_mist.handler(secret_key_base)
     |> mist.new
-    |> mist.port(3000)
+    |> mist.port(8080)
+    |> mist.bind("0.0.0.0")
     |> mist.start
 
   process.sleep_forever()
